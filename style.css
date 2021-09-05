@@ -1,0 +1,754 @@
+/* Global Styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family:  'Open Sans', sans-serif; 
+    color: #eee;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: url("files/images/sitebg.jpg") no-repeat center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+section{
+    padding: 5rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: #eee;
+}
+
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+
+
+/* End Global */
+
+
+
+
+
+/* Start reusable */
+
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.section-heading h1{
+    font-size: 3rem;
+    color: rgba(255,255,255,.3);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.section-heading h1::before,
+.section-heading h1::after{
+    content: "";
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255,.75);
+}
+
+.section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+
+}
+
+.section-heading h1::after{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    bottom: -1rem;
+}
+
+.section-heading h6{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.has-margin-right{
+    margin-right: 5rem;
+}
+/* End  reusable*/
+
+
+
+
+
+/* Start header */
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.top-nav{
+    width:100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 50;
+    background-color: rgb(26, 23, 49);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: all 650ms cubic-bezier(1, 0, 0, 1);
+}
+
+.nav-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media-list li{
+    margin: 3rem 2rem;
+}
+
+.nav-list li{
+    margin: 0 2rem;
+}
+
+.nav-link{
+    position: relative; /* This permits the underline effect */
+    font-family: "Advent Pro", sans-serif; 
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.nav-link:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px; 
+    bottom: 0;
+    left: 0; 
+    background-color: #F84262;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+.nav-link:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+.nav-link:hover{
+    color: #FFd544;
+    transition: all .3s ease-in-out 0s;
+} 
+
+.top-nav.open{
+    top: 0;
+    border-radius: initial;
+}
+
+.menu-toggler{
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    z-index: 1500;
+    transition: 605ms ease-out;
+}
+
+.menu-toggler:hover{ 
+    transform: scale(1.1);
+}
+
+.menu-toggler.open{
+    transform: rotate(-45deg);
+}
+
+.bar{
+    background: #FFd544;
+    width: 100%;
+    height: 2px;
+    /* border-radius: .8rem; */
+}
+
+.bar.half{
+    width: 50%;
+    background: #F84262;
+}
+
+.bar.start{
+    transform-origin: right;
+    transition: 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.start{
+    transform: rotate(-450deg) translateX(1.1rem);
+}
+
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.end{
+    transform: rotate(-450deg) translateX(-1rem);
+}
+
+.landing-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.landing-text h1{
+
+    font-size: 9rem;
+    font-family: "Advent Pro", sans-serif;
+    background: linear-gradient(to top, #FFd544, #F84262);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.landing-text h6{
+    font-size: 2rem;
+    font-weight: 300;
+    user-select: none;
+}
+
+.social-media{
+    margin-top: 3rem;
+}
+
+.social-media i{
+    font-size: 4rem;
+    transition: all 350ms;
+    
+}
+
+
+/* Scroll Down Button */
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 7px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+
+/* End scroll down button here */
+
+
+
+
+#linkedin:hover{
+    color: #0072b1;
+    transform: scale(1.1);
+}
+
+#github:hover{
+    color: white;
+    transform: scale(1.1);
+}
+
+#hackerrank:hover{
+    color: #1BA94C;
+    transform: scale(1.1);
+}
+
+.button:link{
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    top: 3rem;
+    border: 0.1px solid white;
+    padding: 1rem; 
+    transition: ease-in-out all 350ms;
+}
+
+.button:hover{
+    color: rgba(238, 238, 238, 0.664);
+    opacity: 0.5;
+}
+/* End header */
+
+
+/* Start About */
+
+.about {
+    margin-bottom: 150px;
+}
+
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-heading{
+    padding-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+}
+
+.about-heading h1{
+    font-size: 7rem;
+    opacity: 0.2;
+}
+
+.about-heading h6{
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 1.75rem;
+}
+
+.about-details{
+    flex: 1;
+    text-align: center;
+}
+ 
+.profile-img{
+    flex: 1;
+}
+
+.profile-image{
+    width: 75%;
+}
+
+/* Skill Icons */
+
+.skills {
+    list-style: none;
+    display: table;
+    margin: 0 auto;
+}
+
+ul#skills-list{
+    min-width: 100%;
+    padding-top: 1rem;
+}
+
+ul#skills-list li{
+    display: inline;
+    font-size: 6rem;
+}
+/* TO-DO: Make the devicons fill in with color and move in from the right side of the screen on scroll. */
+
+
+/* Start Portfolio */
+
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.portfolio-item h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.portfolio-item p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.portfolio-item :last-child{
+    margin-bottom: 0;
+}
+
+.portfolio-img{
+    width: 50rme;
+    flex: 1;
+    
+}
+
+.portfolio-description{
+    flex: 1;
+}
+
+.portfolio-description h6{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.3;
+}
+
+.portfolio-description h1{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1rem 0;;
+}
+
+.portfolio-description .cta{
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #3883ff;
+    transition: all 200ms;
+}
+
+.portfolio-image{
+    width: 100%;
+    border-radius: 2%;
+}
+
+.portfolio-description .cta:hover{
+    color: #2d58a7;
+}
+
+/* Time Line */
+
+.timeline ul{
+    border-left: 4px solid #FFd544;
+    border-radius: .8rem;
+    background-color: rgba(1, 7, 51, 0.5);
+    margin: 0 auto;
+    position: relative;
+    padding: 5rem;
+    list-style: none;
+    text-align: left;
+    width: 70%;
+}
+
+.timeline h1{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem ;
+    opacity: .5;
+}
+
+.timeline .date{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.timeline .date :last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .date::before,
+.timeline .date::after{
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline .date::before{
+    content: attr(date-date);
+    left: -19rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+}
+
+.timeline .date::after{
+    content: '';
+    box-shadow: 0 0 0 3px #F84262;
+    border-radius: 100%;
+    left: -5.7rem;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1e0d5c;
+}
+
+/* Contact Info */
+
+.contact{
+    background-color: #221e3f;
+}
+
+.d-none {
+    display: none;
+}
+
+form{
+    width: 70%;
+    margin: 0 auto;
+}
+
+form label, .alert{
+    font-size: 1.5rem;
+}
+
+.alert {
+    text-align: center;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-top: 5px;
+    border: none;
+    outline-color: #F84262;
+}
+
+input[type="submit"]{
+    width: initial;
+    background-color: #F84262;
+    color: #eee;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 650ms;
+}
+
+input[type="submit"]:hover{
+    color: #221e3f;
+    background-color: #FFd544;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    background-color: #16162d;
+    padding: 1rem 0;
+    position: relative;
+
+}
+
+.up{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: #eee;
+    top: -2.5rem;
+    border-radius: 100%;
+    right: 5rem;
+    display: flex;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.up i{
+    color: #16162d;
+    font-size: 2rem;
+    margin: auto;
+    
+}
+
+.copyright p{
+    font-size: 1.3rem;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(248, 66, 98, 0.99);
+    }
+    70%{
+        box-shadow: 0 0 0 2rem rgba(248, 66, 98, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(248, 66, 98, 0);
+    }
+
+}
+
+/* End Contact */
+
+/* Media Queries */
+
+@media screen and (max-width: 768px){
+    body{
+        background: url("files/images/sitebg2.jpg") no-repeat center fixed;
+        background-size: cover;
+}
+    .nav-list{
+        flex-direction: column;
+    }
+
+    .nav-list li{
+        margin: 2rem 0;
+    }
+
+    .nav-link{
+        font-size: 4.5rem;
+    }
+
+    .about-heading h1{
+    font-size: 6rem;
+    }
+
+    .section-heading h1{
+        font-size: 3rem;
+    }
+
+    .about-details .nav-list{
+        flex-direction: initial;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .menu-toggler{
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .about .container{
+        flex-direction: column;
+    }
+
+    .about-heading{
+    padding-top: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+    }
+
+    .profile-image{
+        width: 90%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5rem;
+    }
+
+    .about-heading{
+        margin-bottom: 6rem;
+    }
+
+    ul#skills-list li{
+        display: inline;
+        font-size: 4rem;
+    }
+
+    .portfolio-item{
+        flex-direction: column;
+    }
+
+    .portfolio-img{
+        margin: 0 0 2rem 0;
+        order: 1;
+        width: 100%;
+        padding-top: 3rem;
+    }
+
+    .portfolio-description{
+        margin: 0;
+        order: 2;
+        text-align: center;
+    }
+
+    form{
+        width: 100%;
+    }
+}
