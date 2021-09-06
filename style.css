@@ -58,6 +58,7 @@ p{
     position: relative;
 }
 
+
 .section-heading{
     text-align: center;
     margin-bottom: 10rem;
@@ -347,7 +348,7 @@ header{
 
 /* End scroll down button here */
 
-#linkedin, #github {
+.social-media-icon {
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
@@ -356,17 +357,13 @@ header{
 }
 
 
-#linkedin:hover{
-    color: #0072b1;
+.social-media-icon:hover{
+    color: #dd761b;
     -ms-transform: scale(1.2) rotate(360deg);
     transform: scale(1.2) rotate(360deg);
 }
 
-#github:hover{
-    color: white;
-    -ms-transform: scale(1.2) rotate(360deg);
-    transform: scale(1.2) rotate(360deg);
-}
+
 
 .button:link{
     font-size: 11px;
