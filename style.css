@@ -345,17 +345,27 @@ header{
 
 /* End scroll down button here */
 
-
+#linkedin, #github {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
 
 
 #linkedin:hover{
     color: #0072b1;
     transform: scale(1.1);
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg);
 }
 
 #github:hover{
     color: white;
     transform: scale(1.1);
+    -ms-transform: rotate(360deg); /* IE 9 */
+    transform: rotate(360deg);
 }
 
 #hackerrank:hover{
@@ -577,6 +587,7 @@ ul#skills-list li{
     display: flex;
     flex-direction: column;
 }
+
 
 .d-none {
     display: none;
