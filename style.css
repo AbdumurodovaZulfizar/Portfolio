@@ -13,6 +13,7 @@ html{
     overflow-x: hidden;
     box-sizing: border-box;
     overflow-y: scroll;
+    width: 100%;
 }
 
 body{
@@ -134,7 +135,8 @@ header{
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    margin-top: 50px;
 }
 
 .social-media-list{
@@ -356,21 +358,14 @@ header{
 
 #linkedin:hover{
     color: #0072b1;
-    transform: scale(1.1);
-    -ms-transform: rotate(360deg); /* IE 9 */
-    transform: rotate(360deg);
+    -ms-transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(360deg);
 }
 
 #github:hover{
     color: white;
-    transform: scale(1.1);
-    -ms-transform: rotate(360deg); /* IE 9 */
-    transform: rotate(360deg);
-}
-
-#hackerrank:hover{
-    color: #1BA94C;
-    transform: scale(1.1);
+    -ms-transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(360deg);
 }
 
 .button:link{
@@ -452,6 +447,15 @@ ul#skills-list{
 ul#skills-list li{
     display: inline;
     font-size: 6rem;
+}
+
+ul#soft-skills-list li{
+    display: inline;
+    font-size: 3rem;
+    padding: 80px 20px 20px 20px;
+}
+.soft-skills {
+    margin-top: 40px;
 }
 /* TO-DO: Make the devicons fill in with color and move in from the right side of the screen on scroll. */
 
@@ -690,8 +694,12 @@ input[type="submit"]:hover{
         flex-direction: column;
     }
 
+    .top-nav {
+        margin-top: 20px;
+    }
+
     .nav-list li{
-        margin: 2rem 0;
+        margin: 0;
     }
 
     .nav-link{
