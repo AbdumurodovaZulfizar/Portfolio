@@ -729,6 +729,10 @@ input[type="submit"]:hover{
         flex-direction: column;
     }
 
+    .surname {
+        font-size: 5.5rem;
+    }
+
     .about-heading{
     padding-top: 0.2rem;
     text-align: center;
