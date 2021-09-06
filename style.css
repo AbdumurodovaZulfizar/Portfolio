@@ -573,6 +573,10 @@ ul#skills-list li{
 .contact{
     background-color: #221e3f;
 }
+.d-flex {
+    display: flex;
+    flex-direction: column;
+}
 
 .d-none {
     display: none;
