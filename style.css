@@ -325,6 +325,7 @@ header{
     border-width: 0px 0 2px 2px;
 }
 
+
 @keyframes bounce {
   0%,
   100%,
@@ -356,6 +357,7 @@ header{
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+    animation: all 0.3s ease-out;
 }
 
 
@@ -363,6 +365,17 @@ header{
     color: #dd761b;
     -ms-transform: scale(1.2) rotate(360deg);
     transform: scale(1.2) rotate(360deg);
+}
+
+
+@keyframes icons {
+    0% {
+        transform: none;
+    }
+    100% {
+    -ms-transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(360deg);
+    }
 }
 
 
