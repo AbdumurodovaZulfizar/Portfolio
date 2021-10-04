@@ -190,6 +190,7 @@ header{
 .top-nav.open{
     top: 0;
     border-radius: initial;
+    margin-top: 0;
 }
 
 .menu-toggler{
